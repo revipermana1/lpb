@@ -29,9 +29,8 @@
     @endif
 
       <div class="container">
-          @foreach ($posts->skip(1) as $post)
-
-          <div class="row justify-content-center">
+          <div class="row">
+            @foreach ($posts->skip(1) as $post)
               <div class="col-4 mb-3">
                 <div class="card">
                     <div class="position-absolute  px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.7);"><a href="/categories/{{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a></div>
@@ -49,8 +48,9 @@
                     </div>
                   </div>
               </div>
+              @endforeach
           </div>
-          @endforeach
+
       </div>
 
 @endsection
