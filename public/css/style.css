@@ -18,3 +18,13 @@
       border-radius: 0;
       margin-bottom: -1px;
  }
+
+ .card{
+   position: relative;
+ }
+
+ .like{
+   position: absolute;
+   right: 0;
+   bottom: 0;
+ }

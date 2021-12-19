@@ -25,8 +25,8 @@
     <div class="card mb-3">
         @if ($posts[0]->image)
         <div style="max-height: 350px; overflow:hidden;">
-        <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid">
-    </div>
+          <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid">
+        </div>
         @else
          <img src="https://source.unsplash.com/500x400/?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
         @endif
@@ -38,10 +38,12 @@
             </a>{{ $posts[0]->created_at->diffForHumans() }}
           </small>
         </p>
-
           <p class="card-text">{{ $posts[0]->excerpt }}</p>
-        <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read More</a>
-
+          <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read More</a>
+        </div>
+        <div class="like p-3">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          {{ $posts[0]->views }}
         </div>
       </div>
 
@@ -70,6 +72,10 @@
                   </p>
                       <p class="card-text">{{ $post->excerpt }}</p>
                       <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+                    </div>
+                    <div class="like p-3">
+                      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                      {{ $post->views }}
                     </div>
                   </div>
               </div>
