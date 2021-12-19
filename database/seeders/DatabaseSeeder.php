@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(3)->create();
+        // User::factory(3)->create();
 
-        User::create([
-            'name' => 'Revi Permana',
-            'username' => 'revipermana',
-            'email' => 'revi@gmail.com',
-            'password' => bcrypt('password')
-        ]);
+        // User::create([
+        //     'name' => 'Revi Permana',
+        //     'username' => 'revipermana',
+        //     'email' => 'revi@gmail.com',
+        //     'password' => bcrypt('password')
+        // ]);
 
         Category::create([
             'name' => 'Programming',
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'lifestyle'
         ]);
 
-        Post::factory(20)->create();
+        // Post::factory(20)->create();
 
         // Post::create([
 
