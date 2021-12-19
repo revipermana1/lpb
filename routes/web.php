@@ -19,12 +19,7 @@ use App\Models\Category;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title' => 'Home',
-        'active' => 'home'
-    ]);
-});
+Route::get('/', [PostController::class, 'popular']);
 
 Route::get('/about', function () {
     return view('about', [

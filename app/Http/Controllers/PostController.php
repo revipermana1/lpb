@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -40,5 +41,24 @@ class PostController extends Controller
             "active" => 'posts',
             'post' => $post
         ]);
+    }
+
+    public function popular()
+    {
+        $post = DB::table('posts')
+                ->join('categories', 'posts.category_id', '=', 'categories.id')
+                ->select('categories.*', 'posts.*')
+                ->orderBy('views', 'desc')
+                ->get();
+            // $post = Post::all()
+            //             ->orderBy('views', 'desc')
+            //             ->get();
+
+
+        return view('home',[
+                    'title' => 'Home',
+                    "active" => 'home',
+                    'posts' => $post
+                ]);
     }
 }
